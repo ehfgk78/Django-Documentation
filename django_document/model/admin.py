@@ -8,10 +8,11 @@ from model.models.one_to_one import Restaurant, Place
 from .models import (
     Manufacturer,
     Car,
-)
+    User)
 
 admin.site.register(Manufacturer)
 admin.site.register(Car)
+admin.site.register(User)
 
 admin.site.register(Pizza)
 admin.site.register(Topping)

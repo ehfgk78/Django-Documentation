@@ -32,3 +32,13 @@ class User(models.Model):
         blank=True,
         null=True
     )
+
+    def save(self, *args, **kwargs):
+        # if self == self.teacher:
+        if self.teacher and self.teacher.pk == self.pk:
+            self.teacher = None
+            print('teacher cannot be self')
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.name}'
